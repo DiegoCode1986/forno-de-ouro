@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Products from "@/components/Products";
-import OrderForm from "@/components/OrderForm";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -13,9 +13,9 @@ const Index = () => {
         <Hero />
         <About />
         <Products />
-        <OrderForm />
       </main>
       <Footer />
+      <WhatsAppFloat />
     </div>
   );
 };

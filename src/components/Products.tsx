@@ -1,4 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { MessageCircle } from "lucide-react";
 import sourdough from "@/assets/sourdough.jpg";
 import croissants from "@/assets/croissants.jpg";
 import pizza from "@/assets/pizza.jpg";
@@ -32,6 +34,12 @@ const products = [
 ];
 
 const Products = () => {
+  const handleWhatsAppClick = (productTitle: string) => {
+    const message = `Olá! Gostaria de saber mais sobre: ${productTitle}`;
+    const whatsappUrl = `https://wa.me/5511999999999?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, "_blank");
+  };
+
   return (
     <section id="produtos" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
@@ -67,7 +75,7 @@ const Products = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-2">
+                <ul className="space-y-2 mb-4">
                   {product.items.map((item, idx) => (
                     <li key={idx} className="flex items-center space-x-2 text-sm text-muted-foreground">
                       <span className="w-1.5 h-1.5 bg-secondary rounded-full"></span>
@@ -75,6 +83,13 @@ const Products = () => {
                     </li>
                   ))}
                 </ul>
+                <Button
+                  onClick={() => handleWhatsAppClick(product.title)}
+                  className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground"
+                >
+                  <MessageCircle className="w-4 h-4 mr-2" />
+                  Pedir no WhatsApp
+                </Button>
               </CardContent>
             </Card>
           ))}
