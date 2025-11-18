@@ -9,10 +9,10 @@ import cakesSavories from "@/assets/cakes-savories.jpg";
 
 const products = [
   {
-    title: "Pães Artesanais",
-    description: "Fermentação natural, crocância perfeita",
-    image: sourdough,
-    items: ["Pão de Fermentação Natural", "Baguete Francesa", "Integral Multigrãos", "Ciabatta"],
+    title: "Bolos",
+    description: "Deliciosos bolos caseiros feitos com ingredientes selecionados",
+    image: cakesSavories,
+    items: ["Bolo de Chocolate Belga", "Red Velvet Premium", "Bolo de Cenoura com Chocolate", "Brigadeiro Gourmet"],
   },
   {
     title: "Croissants & Doces",
@@ -45,7 +45,7 @@ const Products = () => {
 
   const handleButtonClick = (productTitle: string) => {
     switch (productTitle) {
-      case "Pães Artesanais":
+      case "Bolos":
         navigate("/paes-artesanais");
         break;
       case "Croissants & Doces":
