@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
-import heroImage from "@/assets/hero-bread.jpg";
 
 const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -15,7 +14,7 @@ const Hero = () => {
       id="inicio"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
       style={{
-        backgroundImage: `linear-gradient(rgba(30, 25, 15, 0.75), rgba(30, 25, 15, 0.85)), url(${heroImage})`,
+        backgroundImage: 'linear-gradient(rgba(30, 25, 15, 0.75), rgba(30, 25, 15, 0.85)), url(/forno.jpg)',
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: "fixed",
@@ -54,7 +53,7 @@ const Hero = () => {
           <div className="pt-8">
             <p className="text-white/80 text-sm mb-2">Delivery pelo iFood</p>
             <a
-              href="https://www.ifood.com.br"
+              href="https://www.ifood.com.br/delivery/brasilia-df/forno-de-ouro-panificadora-taguatinga-norte-taguatinga/87a5577e-28ac-40f8-b6bb-6d02843a59d3"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block"

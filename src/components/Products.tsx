@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import sourdough from "@/assets/sourdough.jpg";
 import croissants from "@/assets/croissants.jpg";
 import pizza from "@/assets/pizza.jpg";
@@ -34,10 +35,31 @@ const products = [
 ];
 
 const Products = () => {
+  const navigate = useNavigate();
+
   const handleWhatsAppClick = (productTitle: string) => {
     const message = `Olá! Gostaria de saber mais sobre: ${productTitle}`;
     const whatsappUrl = `https://wa.me/5511999999999?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
+  };
+
+  const handleButtonClick = (productTitle: string) => {
+    switch (productTitle) {
+      case "Pães Artesanais":
+        navigate("/paes-artesanais");
+        break;
+      case "Croissants & Doces":
+        navigate("/croissants-doces");
+        break;
+      case "Pizzas Artesanais":
+        navigate("/pizzas-artesanais");
+        break;
+      case "Bolos & Salgados":
+        navigate("/kits-festa");
+        break;
+      default:
+        handleWhatsAppClick(productTitle);
+    }
   };
 
   return (
@@ -84,11 +106,11 @@ const Products = () => {
                   ))}
                 </ul>
                 <Button
-                  onClick={() => handleWhatsAppClick(product.title)}
+                  onClick={() => handleButtonClick(product.title)}
                   className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground"
                 >
                   <MessageCircle className="w-4 h-4 mr-2" />
-                  Pedir no WhatsApp
+                  fazer pedido
                 </Button>
               </CardContent>
             </Card>

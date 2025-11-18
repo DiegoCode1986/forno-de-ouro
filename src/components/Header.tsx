@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, MapPin, Newspaper, MessageCircle } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,106 +14,97 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border shadow-sm">
-      <nav className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <h1 className="text-2xl md:text-3xl font-bold text-primary">
-              Padaria <span className="text-secondary">Artesanal</span>
-            </h1>
-          </div>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            <button
-              onClick={() => scrollToSection("inicio")}
-              className="text-foreground hover:text-secondary transition-colors font-medium"
-            >
-              Início
-            </button>
-            <button
-              onClick={() => scrollToSection("sobre")}
-              className="text-foreground hover:text-secondary transition-colors font-medium"
-            >
-              Sobre Nós
-            </button>
-            <button
-              onClick={() => scrollToSection("produtos")}
-              className="text-foreground hover:text-secondary transition-colors font-medium"
-            >
-              Produtos
-            </button>
-            <button
-              onClick={() => scrollToSection("encomendas")}
-              className="text-foreground hover:text-secondary transition-colors font-medium"
-            >
-              Encomendas
-            </button>
-          </div>
-
-          {/* CTA Button Desktop */}
-          <div className="hidden md:flex items-center space-x-4">
-            <a href="tel:+5511999999999" className="flex items-center space-x-2">
-              <Phone className="w-5 h-5 text-secondary" />
-              <span className="text-sm font-medium">(11) 99999-9999</span>
-            </a>
-            <Button
-              onClick={() => scrollToSection("encomendas")}
-              variant="default"
-              className="bg-secondary hover:bg-secondary/90 text-secondary-foreground"
-            >
-              Fazer Pedido
-            </Button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-foreground"
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 space-y-4 animate-fade-in">
-            <button
-              onClick={() => scrollToSection("inicio")}
-              className="block w-full text-left text-foreground hover:text-secondary transition-colors font-medium py-2"
-            >
-              Início
-            </button>
-            <button
-              onClick={() => scrollToSection("sobre")}
-              className="block w-full text-left text-foreground hover:text-secondary transition-colors font-medium py-2"
-            >
-              Sobre Nós
-            </button>
-            <button
-              onClick={() => scrollToSection("produtos")}
-              className="block w-full text-left text-foreground hover:text-secondary transition-colors font-medium py-2"
-            >
-              Produtos
-            </button>
-            <button
-              onClick={() => scrollToSection("encomendas")}
-              className="block w-full text-left text-foreground hover:text-secondary transition-colors font-medium py-2"
-            >
-              Encomendas
-            </button>
-            <div className="pt-4 border-t border-border">
-              <a
-                href="tel:+5511999999999"
-                className="flex items-center space-x-2 text-secondary font-medium"
-              >
-                <Phone className="w-5 h-5" />
-                <span>(11) 99999-9999</span>
+    <header className="fixed top-0 left-0 right-0 z-50">
+      {/* Top info bar */}
+      <div className="w-full bg-white border-b border-border">
+        <div className="container mx-auto px-4 py-2 text-xs md:text-sm">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-6">
+              <a href="tel:+556232817005" className="flex items-center gap-2 text-foreground hover:text-secondary">
+                <Phone className="w-4 h-4" />
+                <span>62 3281-7005</span>
+              </a>
+              <a href="tel:+5562999795133" className="flex items-center gap-2 text-foreground hover:text-secondary">
+                <Phone className="w-4 h-4" />
+                <span>62 99979-5133</span>
               </a>
             </div>
+            <div className="hidden md:flex items-center gap-6">
+              <button onClick={() => scrollToSection("localizacao")} className="flex items-center gap-2 text-foreground hover:text-secondary">
+                <MapPin className="w-4 h-4" />
+                <span>Localização</span>
+              </button>
+             
+             
+            </div>
+            {/* Mobile toggle */}
+            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden text-foreground">
+              {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
+            </button>
           </div>
-        )}
-      </nav>
+        </div>
+      </div>
+
+      {/* Main nav bar */}
+      <div className="w-full bg-[#F2F2ED]">
+        <nav className="container mx-auto px-4">
+          <div className="flex items-stretch">
+            {/* Logo area */}
+            <div className="flex items-center pr-6">
+              <img
+                src="/logo_padaria.png"
+                alt="Padaria Artesanal"
+                className="h-20 md:h-22 w-25"
+              />
+            </div>
+
+            {/* Desktop menu */}
+            <div className="hidden md:flex flex-1 items-center justify-center gap-20 text-[#BEB393]">
+              <button onClick={() => scrollToSection("historia")} className="text-center hover:opacity-90">
+                <div className="text-[10px] uppercase tracking-wide opacity-95">A MUNDIAL</div>
+                <div className="text-lg font-extrabold uppercase leading-tight">História</div>
+              </button>
+              <button onClick={() => scrollToSection("servicos")} className="text-center hover:opacity-90">
+                <div className="text-[10px] uppercase tracking-wide opacity-95">CONHEÇA</div>
+                <div className="text-lg font-extrabold uppercase leading-tight">Serviços</div>
+              </button>
+              <button onClick={() => scrollToSection("produtos")} className="text-center hover:opacity-90">
+                <div className="text-[10px] uppercase tracking-wide opacity-95">ENCANTE-SE</div>
+                <div className="text-lg font-extrabold uppercase leading-tight">Produtos</div>
+              </button>
+              <button onClick={() => scrollToSection("encomendas")} className="text-center hover:opacity-90">
+                <div className="text-[10px] uppercase tracking-wide opacity-95">VAI FAZER UM EVENTO?</div>
+                <div className="text-lg font-extrabold uppercase leading-tight">Encomendas</div>
+              </button>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      {/* Mobile dropdown content */}
+      {isMenuOpen && (
+        <div className="md:hidden bg-amber-500 text-white">
+          <div className="container mx-auto px-4 py-3 space-y-3">
+            <button onClick={() => scrollToSection("localizacao")} className="flex items-center gap-2">
+              <MapPin className="w-4 h-4" />
+              <span>Localização</span>
+            </button>
+            <button onClick={() => scrollToSection("blog")} className="flex items-center gap-2">
+              <Newspaper className="w-4 h-4" />
+              <span>Blog</span>
+            </button>
+            <button onClick={() => scrollToSection("contato")} className="flex items-center gap-2">
+              <MessageCircle className="w-4 h-4" />
+              <span>Fale Conosco</span>
+            </button>
+            <div className="h-px bg-white/30" />
+            <button onClick={() => scrollToSection("historia")} className="block w-full text-left">A MUNDIAL · HISTÓRIA</button>
+            <button onClick={() => scrollToSection("servicos")} className="block w-full text-left">CONHEÇA · SERVIÇOS</button>
+            <button onClick={() => scrollToSection("produtos")} className="block w-full text-left">ENCANTE-SE · PRODUTOS</button>
+            <button onClick={() => scrollToSection("encomendas")} className="block w-full text-left">VAI FAZER UM EVENTO? · ENCOMENDAS</button>
+          </div>
+        </div>
+      )}
     </header>
   );
 };
