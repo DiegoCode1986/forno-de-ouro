@@ -79,7 +79,7 @@ const PizzasArtesanais = () => {
 
   const handleWhatsAppOrder = (product: ProductItem) => {
     const message = `Olá! Gostaria de encomendar:\n${product.title} (${product.size})\nValor: ${product.price}`;
-    const whatsappUrl = `https://wa.me/5511999999999?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/5561996896829?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
   };
 

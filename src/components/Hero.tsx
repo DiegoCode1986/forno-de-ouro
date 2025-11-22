@@ -41,14 +41,7 @@ const Hero = () => {
             >
               Ver Produtos
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              onClick={() => scrollToSection("encomendas")}
-              className="bg-white/10 hover:bg-white/20 text-white border-2 border-white/30 text-lg px-8 py-6 backdrop-blur-sm transition-all hover:scale-105"
-            >
-              Fazer Encomenda
-            </Button>
+           
           </div>
           <div className="pt-8">
             <p className="text-white/80 text-sm mb-2">Delivery pelo iFood</p>

@@ -66,13 +66,13 @@ const CroissantsDoces = () => {
       unit: "Unidade",
       price: "R$ 10,00",
       image: "/brioche.jpg",
-      description: "Pão doce francês rico em manteiga e ovos",
+      description: "Bolo doce francês rico em manteiga e ovos",
     },
   ];
 
   const handleWhatsAppOrder = (product: ProductItem) => {
-    const message = `Olá! Gostaria de encomendar:\n${product.title} (${product.unit})\nValor: ${product.price}`;
-    const whatsappUrl = `https://wa.me/5511999999999?text=${encodeURIComponent(message)}`;
+    const message = `Olá! Quero encomendar o ${product.title} (${product.unit}) - Valor: ${product.price}`;
+    const whatsappUrl = `https://wa.me/5561996896829?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
   };
 

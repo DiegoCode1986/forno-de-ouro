@@ -72,8 +72,8 @@ const KitsFesta = () => {
   ];
 
   const handleWhatsAppOrder = (kit: KitItem) => {
-    const message = `Olá! Gostaria de encomendar:\n${kit.title} (${kit.people})\nValor: ${kit.price}`;
-    const whatsappUrl = `https://wa.me/5511999999999?text=${encodeURIComponent(message)}`;
+    const message = `Olá! Quero encomendar o ${kit.title} (${kit.people}) - Valor: ${kit.price}`;
+    const whatsappUrl = `https://wa.me/5561996896829?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
   };
 
@@ -240,7 +240,7 @@ const KitsFesta = () => {
               size="lg"
               onClick={() => {
                 const message = "Olá! Gostaria de solicitar um orçamento personalizado para kit festa.";
-                const whatsappUrl = `https://wa.me/5511999999999?text=${encodeURIComponent(message)}`;
+                const whatsappUrl = `https://wa.me/5561996896829?text=${encodeURIComponent(message)}`;
                 window.open(whatsappUrl, "_blank");
               }}
               className="bg-secondary hover:bg-secondary/90 text-secondary-foreground"

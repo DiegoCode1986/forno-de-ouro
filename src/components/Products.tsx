@@ -15,19 +15,19 @@ const products = [
     items: ["Bolo de Chocolate Belga", "Red Velvet Premium", "Bolo de Cenoura com Chocolate", "Brigadeiro Gourmet"],
   },
   {
-    title: "Croissants & Doces",
+    title: "Salgados",
     description: "Folhados leves e deliciosos",
     image: croissants,
     items: ["Croissant de Manteiga", "Pain au Chocolat", "Sonhos", "Pão Doce"],
   },
   {
-    title: "Pizzas Artesanais",
+    title: "Pizzas",
     description: "Massa fermentada por 48h",
     image: pizza,
     items: ["Margherita", "Pepperoni", "Quatro Queijos", "Calabresa Especial"],
   },
   {
-    title: "Bolos & Salgados",
+    title: "Kit Festas",
     description: "Para festas e eventos",
     image: cakesSavories,
     items: ["Bolos Decorados", "Coxinhas", "Empadas", "Tortas Salgadas"],
@@ -39,7 +39,7 @@ const Products = () => {
 
   const handleWhatsAppClick = (productTitle: string) => {
     const message = `Olá! Gostaria de saber mais sobre: ${productTitle}`;
-    const whatsappUrl = `https://wa.me/5511999999999?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/5561996896829?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
   };
 
@@ -48,17 +48,17 @@ const Products = () => {
       case "Bolos":
         navigate("/paes-artesanais");
         break;
-      case "Croissants & Doces":
+      case "Salgados":
         navigate("/croissants-doces");
         break;
-      case "Pizzas Artesanais":
+      case "Pizzas":
         navigate("/pizzas-artesanais");
         break;
-      case "Bolos & Salgados":
+      case "Kit Festas":
         navigate("/kits-festa");
         break;
       default:
-        handleWhatsAppClick(productTitle);
+        navigate("/");
     }
   };
 
@@ -109,8 +109,7 @@ const Products = () => {
                   onClick={() => handleButtonClick(product.title)}
                   className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground"
                 >
-                  <MessageCircle className="w-4 h-4 mr-2" />
-                  fazer pedido
+                  Ver produtos
                 </Button>
               </CardContent>
             </Card>

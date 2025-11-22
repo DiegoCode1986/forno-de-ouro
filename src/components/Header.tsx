@@ -20,13 +20,13 @@ const Header = () => {
         <div className="container mx-auto px-4 py-2 text-xs md:text-sm">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-6">
-              <a href="tel:+556232817005" className="flex items-center gap-2 text-foreground hover:text-secondary">
+              <a href="tel:+556130366162" className="flex items-center gap-2 text-foreground hover:text-secondary">
                 <Phone className="w-4 h-4" />
-                <span>62 3281-7005</span>
+                <span>61 3036-6162</span>
               </a>
-              <a href="tel:+5562999795133" className="flex items-center gap-2 text-foreground hover:text-secondary">
+              <a href="tel:+5561996896829" className="flex items-center gap-2 text-foreground hover:text-secondary">
                 <Phone className="w-4 h-4" />
-                <span>62 99979-5133</span>
+                <span>61 99689-6829</span>
               </a>
             </div>
             <div className="hidden md:flex items-center gap-6">
@@ -61,7 +61,7 @@ const Header = () => {
             {/* Desktop menu */}
             <div className="hidden md:flex flex-1 items-center justify-center gap-20 text-[#BEB393]">
               <button onClick={() => scrollToSection("historia")} className="text-center hover:opacity-90">
-                <div className="text-[10px] uppercase tracking-wide opacity-95">A MUNDIAL</div>
+                <div className="text-[10px] uppercase tracking-wide opacity-95">FORNO DE OURO</div>
                 <div className="text-lg font-extrabold uppercase leading-tight">História</div>
               </button>
               <button onClick={() => scrollToSection("servicos")} className="text-center hover:opacity-90">

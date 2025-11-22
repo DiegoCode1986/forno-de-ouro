@@ -22,7 +22,7 @@ const PaesArtesanais = () => {
   const products: ProductItem[] = [
     {
       id: 1,
-      title: "Pão de Fermentação Natural",
+      title: "Bolo 1",
       weight: "500g",
       price: "R$ 18,00",
       image: "imagens/bolos/bolo1.png",
@@ -30,15 +30,15 @@ const PaesArtesanais = () => {
     },
     {
       id: 2,
-      title: "Baguete Francesa",
+      title: "Bolo 2",
       weight: "300g",
       price: "R$ 12,00",
       image: "imagens/bolos/bolo2.jpeg",
-      description: "Tradicional pão francês com casca crocante e miolo aerado",
+      description: "Tradicional bolo francês com casca crocante e miolo aerado",
     },
     {
       id: 3,
-      title: "Integral Multigrãos",
+      title: "Bolo 3",
       weight: "600g",
       price: "R$ 22,00",
       image: "imagens/bolos/bolo3.png",
@@ -46,15 +46,15 @@ const PaesArtesanais = () => {
     },
     {
       id: 4,
-      title: "Ciabatta",
+      title: "Bolo 4",
       weight: "400g",
       price: "R$ 16,00",
       image: "imagens/bolos/bolo4.png",
-      description: "Pão italiano com textura rústica e sabor marcante",
+      description: "Bolo italiano com textura rústica e sabor marcante",
     },
     {
       id: 5,
-      title: "Pão de Centeio",
+      title: "Bolo 5",
       weight: "500g",
       price: "R$ 20,00",
       image: "imagens/bolos/bolo5.png",
@@ -62,17 +62,17 @@ const PaesArtesanais = () => {
     },
     {
       id: 6,
-      title: "Focaccia",
+      title: "Bolo 6",
       weight: "350g",
       price: "R$ 19,00",
       image: "imagens/bolos/bolo3.png",
-      description: "Pão italiano com azeite, alecrim e sal grosso",
+      description: "Bolo italiano com azeite, alecrim e sal grosso",
     },
   ];
 
   const handleWhatsAppOrder = (product: ProductItem) => {
-    const message = `Olá! Gostaria de encomendar:\n${product.title} (${product.weight})\nValor: ${product.price}`;
-    const whatsappUrl = `https://wa.me/5511999999999?text=${encodeURIComponent(message)}`;
+    const message = `Olá! Quero encomendar o ${product.title} (${product.weight}) - Valor: ${product.price}`;
+    const whatsappUrl = `https://wa.me/5561996896829?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
   };
 
