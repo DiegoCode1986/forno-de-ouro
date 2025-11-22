@@ -82,28 +82,62 @@ const Header = () => {
       </div>
 
       {/* Mobile dropdown content */}
-      {isMenuOpen && (
-        <div className="md:hidden bg-amber-500 text-white">
-          <div className="container mx-auto px-4 py-3 space-y-3">
-            <button onClick={() => scrollToSection("localizacao")} className="flex items-center gap-2">
-              <MapPin className="w-4 h-4" />
-              <span>Localização</span>
+      <div className={`fixed inset-y-0 right-0 w-64 bg-amber-500 text-white z-50 transform transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        <div className="h-full overflow-y-auto p-4 space-y-4">
+          <div className="flex justify-end mb-4">
+            <button 
+              onClick={() => setIsMenuOpen(false)}
+              className="p-2 hover:bg-amber-600 rounded-full transition-colors"
+            >
+              <X size={24} />
             </button>
-            <button onClick={() => scrollToSection("blog")} className="flex items-center gap-2">
-              <Newspaper className="w-4 h-4" />
-              <span>Blog</span>
-            </button>
-            <button onClick={() => scrollToSection("contato")} className="flex items-center gap-2">
-              <MessageCircle className="w-4 h-4" />
-              <span>Fale Conosco</span>
-            </button>
-            <div className="h-px bg-white/30" />
-            <button onClick={() => scrollToSection("historia")} className="block w-full text-left">A MUNDIAL · HISTÓRIA</button>
-            <button onClick={() => scrollToSection("servicos")} className="block w-full text-left">CONHEÇA · SERVIÇOS</button>
-            <button onClick={() => scrollToSection("produtos")} className="block w-full text-left">ENCANTE-SE · PRODUTOS</button>
-            <button onClick={() => scrollToSection("encomendas")} className="block w-full text-left">VAI FAZER UM EVENTO? · ENCOMENDAS</button>
           </div>
+          
+          <button 
+            onClick={() => scrollToSection("localizacao")} 
+            className="flex items-center gap-2 w-full p-3 hover:bg-amber-600 rounded-lg transition-colors"
+          >
+            <MapPin className="w-5 h-5" />
+            <span>Localização</span>
+          </button>
+          
+          <div className="h-px bg-white/30 my-2" />
+          
+          <nav className="space-y-2">
+            <button 
+              onClick={() => scrollToSection("historia")} 
+              className="block w-full text-left p-3 hover:bg-amber-600 rounded-lg transition-colors"
+            >
+              FORNO DE OURO · HISTÓRIA
+            </button>
+            <button 
+              onClick={() => scrollToSection("servicos")} 
+              className="block w-full text-left p-3 hover:bg-amber-600 rounded-lg transition-colors"
+            >
+              CONHEÇA · SERVIÇOS
+            </button>
+            <button 
+              onClick={() => scrollToSection("produtos")} 
+              className="block w-full text-left p-3 hover:bg-amber-600 rounded-lg transition-colors"
+            >
+              ENCANTE-SE · PRODUTOS
+            </button>
+            <button 
+              onClick={() => scrollToSection("encomendas")} 
+              className="block w-full text-left p-3 hover:bg-amber-600 rounded-lg transition-colors"
+            >
+              VAI FAZER UM EVENTO? · ENCOMENDAS
+            </button>
+          </nav>
         </div>
+      </div>
+      
+      {/* Overlay */}
+      {isMenuOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 z-40 md:hidden"
+          onClick={() => setIsMenuOpen(false)}
+        />
       )}
     </header>
   );

@@ -6,9 +6,13 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
-            <h3 className="text-2xl font-bold mb-4">
-              Padaria <span className="text-amber-400">Artesanal</span>
-            </h3>
+            <div className="mb-4">
+              <img 
+                src="/logo_padaria.png" 
+                alt="Forno de Ouro Padaria" 
+                className="h-16 w-auto" 
+              />
+            </div>
             <p className="text-primary-foreground/80">
               Tradição e qualidade em cada fornada. Feito com amor desde 2009.
             </p>
@@ -52,7 +56,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-primary-foreground/20 pt-8 text-center text-primary-foreground/70">
-          <p>&copy; {new Date().getFullYear()} Padaria Artesanal. Todos os direitos reservados.</p>
+          <p>&copy; {new Date().getFullYear()} Forno de Ouro. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>

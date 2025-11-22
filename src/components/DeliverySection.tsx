@@ -1,6 +1,6 @@
 const DeliverySection = () => {
   return (
-    <section className="py-12 bg-amber-50">
+    <section className="py-12 ">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
@@ -19,7 +19,7 @@ const DeliverySection = () => {
               <img 
                 src="/ifood.png" 
                 alt="Peça pelo iFood" 
-                className="h-16 md:h-20 hover:opacity-90 transition-opacity"
+                className="h-22 md:h-24 hover:opacity-90 transition-opacity"
               />
             </a>
           </div>
